@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">businesscard</string>
+    <string name="nathan">Nathan Wallace</string>
+    <string name="profession">Android Developer</string>
+    <string name="contact">Contact</string>
+    <string name="email">ncw232@gmail.com</string>
+    <string name="phone">804.501.9023</string>
+    <string name="edit_button">Edit</string>
+</resources>
