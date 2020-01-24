@@ -11,4 +11,5 @@
     <string name="profession_label">Profession</string>
     <string name="email_label">Email</string>
     <string name="phone_label">Phone</string>
+    <string name="save_button">Save</string>
 </resources>
