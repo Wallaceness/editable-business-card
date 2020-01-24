@@ -6,4 +6,9 @@
     <string name="email">ncw232@gmail.com</string>
     <string name="phone">804.501.9023</string>
     <string name="edit_button">Edit</string>
+    <string name="name_field">Name</string>
+    <string name="name_label">Name</string>
+    <string name="profession_label">Profession</string>
+    <string name="email_label">Email</string>
+    <string name="phone_label">Phone</string>
 </resources>
