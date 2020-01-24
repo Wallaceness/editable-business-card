@@ -1,6 +1,8 @@
 package com.example.android.businesscard;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -38,12 +40,24 @@ public class FormActivity extends AppCompatActivity {
 
 
     public void saveForm(View view) {
-        Intent intent= new Intent();
+        // Get text values of edit fields
         String name= nameField.getText().toString();
         String profession = professionField.getText().toString();
         String email = emailField.getText().toString();
         String phone = phoneField.getText().toString();
 
+        //saved data to shared preferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.name_label), name);
+        editor.putString(getString(R.string.profession_label), profession);
+        editor.putString(getString(R.string.email_label), email);
+        editor.putString(getString(R.string.phone_label), phone);
+
+        editor.apply();
+
+        //send data back to parent in intent
+        Intent intent= new Intent();
         intent.putExtra(REPLY_NAME, name);
         intent.putExtra(REPLY_PROFESSION, profession);
         intent.putExtra(REPLY_EMAIL, email);

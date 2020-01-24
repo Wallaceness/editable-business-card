@@ -3,7 +3,9 @@ package com.example.android.businesscard;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -29,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         professionText = findViewById(R.id.profession_text);
         emailText = findViewById(R.id.email_text);
         phoneText= findViewById(R.id.phone_text);
+
+        SharedPreferences data = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE);
+        nameText.setText(data.getString("Name", "Nathan"));
+        professionText.setText(data.getString("Profession", "Android Developer"));
+        emailText.setText(data.getString("Email", "ncw232@gmail.com"));
+        phoneText.setText(data.getString("Phone", "804.501.9023"));
+        System.out.println("X");
     }
 
     public void onEdit(View view){
