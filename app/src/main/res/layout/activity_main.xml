@@ -1,101 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/androidGreen">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/name_text"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/nathan"
-        app:layout_constraintTop_toTopOf="@id/gh1"
-        android:textAlignment="center"
-        android:textSize="18pt"
-        android:textColor="@color/white"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gh1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".2" />
-
-    <TextView
-        android:id="@+id/profession_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/profession"
-        app:layout_constraintTop_toTopOf="@id/gh2"
-        android:textAlignment="center"
-        android:textSize="12pt"
-        android:textColor="@color/white" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gh2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".35" />
-
-    <TextView
-        android:id="@+id/contact_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/contact"
-        app:layout_constraintTop_toTopOf="@id/gh3"
-        android:textAlignment="center"
-        android:textSize="18pt"
-        android:textColor="@color/white"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gh3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5" />
-
-    <TextView
-        android:id="@+id/email_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/email"
-        app:layout_constraintTop_toTopOf="@id/gh4"
-        android:textAlignment="center"
-        android:textSize="12pt"
-        android:textColor="@color/white" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gh4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".65" />
-
-    <TextView
-        android:id="@+id/phone_text"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/phone"
-        app:layout_constraintTop_toTopOf="@id/gh5"
-        android:textAlignment="center"
-        android:textSize="12pt"
-        android:textColor="@color/white" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gh5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".75" />
-
-    <Button android:id="@+id/edit_button"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/edit_button"
-        android:onClick="onEdit" />
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

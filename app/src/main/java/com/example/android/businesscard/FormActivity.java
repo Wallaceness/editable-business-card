@@ -21,21 +21,21 @@ public class FormActivity extends AppCompatActivity {
     public static final String REPLY_PROFESSION = "com.example.android.businesscard.extra.REPLY_PROFESSION";
     public static final String REPLY_EMAIL = "com.example.android.businesscard.extra.REPLY_EMAIL";
     public static final String REPLY_PHONE = "com.example.android.businesscard.extra.REPLY_PHONE";
-
+    private SharedPreferences data;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_update_form);
-        Intent intent = getIntent();
+        data = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE);
         nameField = findViewById(R.id.name_field);
-        nameField.setText(intent.getStringExtra(MainActivity.EXTRA_NAME));
+        nameField.setText(data.getString("Name", "Nathan"));
         professionField = findViewById(R.id.profession_field);
-        professionField.setText(intent.getStringExtra(MainActivity.EXTRA_PROFESSION));
+        professionField.setText(data.getString("Profession", "Android Developer"));
         emailField= findViewById(R.id.email_field);
-        emailField.setText(intent.getStringExtra(MainActivity.EXTRA_EMAIL));
+        emailField.setText(data.getString("Email", "ncw232@gmail.com"));
         phoneField = findViewById(R.id.phone_field);
-        phoneField.setText(intent.getStringExtra(MainActivity.EXTRA_PHONE));
+        phoneField.setText(data.getString("Phone", "804.501.9023"));
     }
 
 
@@ -57,12 +57,12 @@ public class FormActivity extends AppCompatActivity {
         editor.apply();
 
         //send data back to parent in intent
-        Intent intent= new Intent();
-        intent.putExtra(REPLY_NAME, name);
-        intent.putExtra(REPLY_PROFESSION, profession);
-        intent.putExtra(REPLY_EMAIL, email);
-        intent.putExtra(REPLY_PHONE, phone);
-        setResult(RESULT_OK, intent);
+//        Intent intent= new Intent();
+//        intent.putExtra(REPLY_NAME, name);
+//        intent.putExtra(REPLY_PROFESSION, profession);
+//        intent.putExtra(REPLY_EMAIL, email);
+//        intent.putExtra(REPLY_PHONE, phone);
+//        setResult(RESULT_OK, intent);
         finish();
     }
 }
