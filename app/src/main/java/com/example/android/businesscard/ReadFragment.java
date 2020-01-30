@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -26,37 +27,34 @@ public class ReadFragment extends Fragment {
     private TextView professionText;
     private TextView emailText;
     private TextView phoneText;
+    private Button EditButton;
     private FrameLayout fragmentView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "Name";
+    private static final String ARG_PARAM2 = "Profession";
+    private static final String ARG_PARAM3 = "Email";
+    private static final String ARG_PARAM4 = "Phone";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private String nameParam;
+    private String profParam;
+    private String emailParam;
+    private String phoneParam;
+
+
 
     private OnFragmentInteractionListener mListener;
 
-    public ReadFragment() {
-        // Required empty public constructor
-    }
+    public ReadFragment() { }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ReadFragment.
-     */
     // TODO: Rename and change types and number of parameters
-    public static ReadFragment newInstance(String param1, String param2) {
+    public static ReadFragment newInstance(String name, String profession, String email, String phone) {
         ReadFragment fragment = new ReadFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PARAM1, name);
+        args.putString(ARG_PARAM2, profession);
+        args.putString(ARG_PARAM3, email);
+        args.putString(ARG_PARAM4, phone);
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,8 +63,10 @@ public class ReadFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            nameParam = getArguments().getString(ARG_PARAM1);
+            profParam = getArguments().getString(ARG_PARAM2);
+            emailParam = getArguments().getString(ARG_PARAM3);
+            phoneParam = getArguments().getString(ARG_PARAM4);
         }
     }
 
@@ -79,6 +79,12 @@ public class ReadFragment extends Fragment {
         professionText = rootView.findViewById(R.id.profession_text);
         emailText = rootView.findViewById(R.id.email_text);
         phoneText = rootView.findViewById(R.id.phone_text);
+        EditButton = rootView.findViewById(R.id.edit_button);
+
+        nameText.setText(nameParam);
+        professionText.setText(profParam);
+        emailText.setText(emailParam);
+        phoneText.setText(phoneParam);
 
         return rootView;
     }
